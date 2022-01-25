@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:itinance/react-native-fs.git"
+    "url": "git@github.com:SBS-dlucas/react-native-fs.git"
   },
   "keywords": [
     "react-component",
@@ -32,10 +32,14 @@
   "devDependencies": {
     "create-react-class": "15.6.3",
     "flow-bin": "^0.109.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-native": "^0.64.2",
+    "react-native-windows": "^0.64.11"
   },
   "peerDependencies": {
-    "react-native": "*",
+    "react": ">=16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x",
     "react-native-windows": "*"
   },
   "peerDependenciesMeta": {

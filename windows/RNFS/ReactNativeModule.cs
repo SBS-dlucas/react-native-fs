@@ -89,7 +89,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -109,7 +109,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -134,7 +134,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -147,12 +147,12 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
         [ReactMethod]
-        public async string readFile(string filepath)
+        public async Task<string> readFile(string filepath)
         {
             try
             {
@@ -180,7 +180,7 @@ namespace RNFS
         }
 
         [ReactMethod]
-        public async string read(string filepath, int length, int position)
+        public async Task<string> read(string filepath, int length, int position)
         {
             try
             {
@@ -208,7 +208,7 @@ namespace RNFS
         }
 
         [ReactMethod]
-        public async string hash(string filepath, string algorithm)
+        public async Task<string> hash(string filepath, string algorithm)
         {
             var hashAlgorithmFactory = default(Func<HashAlgorithm>);
             if (!s_hashAlgorithms.TryGetValue(algorithm, out hashAlgorithmFactory))
@@ -281,7 +281,7 @@ namespace RNFS
         }
 
         [ReactMethod]
-        public async JArray readDir(string directory)
+        public async Task<JArray> readDir(string directory)
         {
             try
             {
@@ -355,7 +355,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -383,7 +383,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -397,7 +397,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -424,7 +424,7 @@ namespace RNFS
             }
             catch (Exception ex)
             {
-                throw new Exception("got exception " + ex.toString() + " for filepath " + filepath);
+                throw new Exception("got exception " + ex.ToString() + " for filepath " + filepath);
             }
         }
 
@@ -435,7 +435,7 @@ namespace RNFS
         }
 
         [ReactMethod]
-        public async JObject getFSInfo()
+        public async Task<JObject> getFSInfo()
         {
             try
             {
@@ -452,16 +452,16 @@ namespace RNFS
                 {
                     { "freeSpace", (ulong)properties["System.FreeSpace"] },
                     { "totalSpace", (ulong)properties["System.Capacity"] },
-                });
+                };
             }
             catch (Exception)
             {
-                promise.Reject(null, "getFSInfo is not available");
+                throw new Exception("getFSInfo is not available");
             }
         }
 
         [ReactMethod]
-        public async string touch(string filepath, double mtime, double ctime)
+        public async Task<string> touch(string filepath, double mtime, double ctime)
         {
             try
             {

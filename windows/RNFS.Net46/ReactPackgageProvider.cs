@@ -12,7 +12,7 @@ namespace RNFS
     /// other framework parts (e.g., with the list of packages to load view
     /// managers from).
     /// </summary>
-    public class RNFSPackage : IReactPackage
+    public class ReactPackgageProvider : IReactPackage
     {
         /// <summary>
         /// Creates the list of native modules to register with the react
@@ -24,7 +24,7 @@ namespace RNFS
         {
             return new List<INativeModule>
             {
-                new RNFSManager(reactContext),
+                new ReactNativeModule(reactContext),
             };
         }
 

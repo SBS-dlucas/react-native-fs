@@ -6,7 +6,8 @@
   "typings": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2"
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "windows": "react-native run-windows"
   },
   "repository": {
     "type": "git",
@@ -35,16 +36,11 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-native": "^0.64.2",
-    "react-native-windows": "^0.64.11"
+    "react-native-windows": "0.64.11"
   },
   "peerDependencies": {
     "react": ">=16.8.1",
     "react-native": ">=0.60.0-rc.0 <1.0.x",
-    "react-native-windows": "*"
-  },
-  "peerDependenciesMeta": {
-    "react-native-windows": {
-      "optional": true
-    }
+    "react-native-windows": "^0.63.0-0"
   }
 }

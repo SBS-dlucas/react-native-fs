@@ -1,6 +1,6 @@
 using Microsoft.ReactNative;
 
-namespace RNFS
+namespace ReactNativeFs
 {
     public partial class ReactPackageProvider : IReactPackageProvider
     {

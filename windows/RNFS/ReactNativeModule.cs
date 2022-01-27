@@ -13,7 +13,7 @@ using Windows.Storage;
 
 namespace RNFS
 {
-    [ReactModule("ReactNativeFS")]
+    [ReactModule("RNFS")]
     class ReactNativeModule
     {
         private const int FileType = 0;

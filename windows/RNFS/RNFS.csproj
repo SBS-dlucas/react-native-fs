@@ -10,8 +10,8 @@
     <ProjectGuid>{E49675E2-903D-4FBF-BFA3-9092DE8C3F77}</ProjectGuid>
     <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReactNativeFs</RootNamespace>
-    <AssemblyName>ReactNativeFs</AssemblyName>
+    <RootNamespace>RNFS</RootNamespace>
+    <AssemblyName>RNFS</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>

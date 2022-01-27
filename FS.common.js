@@ -11,7 +11,7 @@ var RNFSManager = require('react-native').NativeModules.RNFSManager;
 
 var NativeEventEmitter = require('react-native').NativeEventEmitter;
 
-var RNFS_NativeEventEmitter = new NativeEventEmitter(RNFSManager);
+// var RNFS_NativeEventEmitter = new NativeEventEmitter(RNFSManager);
 
 var base64 = require('base-64');
 var utf8 = require('utf8');
@@ -499,7 +499,7 @@ var RNFS = {
     var jobId = getJobId();
     var subscriptions = [];
 
-    if (options.begin) {
+    /*if (options.begin) {
       subscriptions.push(RNFS_NativeEventEmitter.addListener('DownloadBegin', (res) => {
         if (res.jobId === jobId) options.begin(res);
       }));
@@ -515,7 +515,7 @@ var RNFS = {
       subscriptions.push(RNFS_NativeEventEmitter.addListener('DownloadResumable', (res) => {
         if (res.jobId === jobId) options.resumable(res);
       }));
-    }
+    }*/
 
     var bridgeOptions = {
       jobId: jobId,
@@ -562,7 +562,7 @@ var RNFS = {
     if (options.headers && typeof options.headers !== 'object') throw new Error('uploadFiles: Invalid value for property `headers`');
     if (options.fields && typeof options.fields !== 'object') throw new Error('uploadFiles: Invalid value for property `fields`');
     if (options.method && typeof options.method !== 'string') throw new Error('uploadFiles: Invalid value for property `method`');
-
+    /*
     if (options.begin) {
       subscriptions.push(RNFS_NativeEventEmitter.addListener('UploadBegin', options.begin));
     } else if (options.beginCallback) {
@@ -576,6 +576,7 @@ var RNFS = {
       // Deprecated
       subscriptions.push(RNFS_NativeEventEmitter.addListener('UploadProgress', options.progressCallback));
     }
+    */
 
     var bridgeOptions = {
       jobId: jobId,

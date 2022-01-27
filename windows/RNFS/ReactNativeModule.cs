@@ -13,11 +13,19 @@ using Windows.Storage;
 
 namespace RNFS
 {
-    [ReactModule("RNFS")]
-    class ReactNativeModule
+    [ReactModule("RNFSManager")]
+    internal sealed class ReactNativeModule
     {
         private const int FileType = 0;
         private const int DirectoryType = 1;
+        private ReactContext _reactContext;
+
+        [ReactInitializer]
+        public void Initialize(ReactContext reactContext)
+        {
+            _reactContext = reactContext;
+        }
+
 
         private static readonly IReadOnlyDictionary<string, Func<HashAlgorithm>> s_hashAlgorithms =
             new Dictionary<string, Func<HashAlgorithm>>
